@@ -165,8 +165,8 @@ button:focus-visible {
 }
 
 .divider {
-  width: 240px;
-  height: 8px;
+  width: 160px;
+  height: 4px;
   margin: 32px 0;
   background-color: var(--blue);
 }

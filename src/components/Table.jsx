@@ -10,20 +10,20 @@ const names = [
   {
     title: "size",
     color: "bluedark",
-    items: [{ key: "size", name: "" }],
+    items: [{ key: "size", name: "size" }],
   },
   {
     title: "FP",
     color: "purple",
     items: [
-      { key: "fps", name: "" },
+      { key: "fps", name: "total" },
       { key: "multiplier", count: ["fps"], name: "/size" },
     ],
   },
   {
     title: "name",
     color: "lavender",
-    items: [{ key: "title", name: "" }],
+    items: [{ key: "title", name: "name" }],
   },
 
   {
@@ -126,22 +126,22 @@ const names = [
   {
     title: "people",
     color: "mint",
-    items: [{ key: "people", name: "" }],
+    items: [{ key: "people", name: "poeple" }],
   },
   {
     title: "happiness",
     color: "teal",
-    items: [{ key: "happiness", name: "" }],
+    items: [{ key: "happiness", name: "happiness" }],
   },
   {
     title: "road",
     color: "sky",
-    items: [{ key: "road", name: "" }],
+    items: [{ key: "road", name: "road" }],
   },
   {
     title: "era",
     color: "sky",
-    items: [{ key: "era", name: "" }],
+    items: [{ key: "era", name: "era" }],
   },
 ];
 
@@ -165,7 +165,8 @@ const Table = () => {
   console.log(chosenNames);
 
   const handleSort = (key, category) => {
-    setSortBy(key); // Updating your state, assuming you use this somewhere else
+    setSortBy(category.name);
+    console.log(category.name);
 
     const sortedItems = Object.entries(items).sort(([, a], [, b]) => {
       if (key === "custom") {
@@ -253,7 +254,7 @@ const Table = () => {
       <div className="divider"></div>
 
       <p>
-        currently sorted by <b className="blue-font">{sortBy || "alphabet"}</b>
+        currently sorted by <b className="blue-font">{sortBy || "title"}</b>
         <br />
         click second line in the form to sort by different property. (marked by
         blue color on mouse hover)
@@ -294,7 +295,9 @@ const Table = () => {
             {chosenNames.map((header) =>
               header.items.map((subcat) => (
                 <th
-                  className="sortByCell"
+                  className={`sortByCell ${
+                    subcat.name === sortBy ? "blue" : ""
+                  }`}
                   onClick={() => handleSort(subcat.key, subcat)}
                   key={subcat.key}
                 >
