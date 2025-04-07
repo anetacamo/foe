@@ -2,11 +2,11 @@ import { useState } from "react";
 import items from "../data2.json";
 
 const names = [
-  {
-    title: "own",
-    color: "blue",
-    items: [{ key: "amount", name: "" }],
-  },
+  // {
+  //   title: "own",
+  //   color: "blue",
+  //   items: [{ key: "amount", name: "" }],
+  // },
   {
     title: "size",
     color: "bluedark",
@@ -134,6 +134,11 @@ const names = [
     items: [{ key: "happiness", name: "" }],
   },
   {
+    title: "road",
+    color: "sky",
+    items: [{ key: "road", name: "" }],
+  },
+  {
     title: "era",
     color: "sky",
     items: [{ key: "era", name: "" }],
@@ -207,10 +212,11 @@ const Table = () => {
   return (
     <div>
       <p>
-        <b>Fps</b> first columns shows total forge points buildings gives based
-        on the <b>age</b> in era column.
+        <b>Fps</b> <br />
+        first columns shows total forge points buildings gives based on the{" "}
+        <b>age</b> in era column.
         <br />
-        <b>Fps/size</b> shows fps per square based on buildings <b>size</b>
+        <b>Fps/size</b> calculates fps divided by buildings <b>size</b>
       </p>
       <p>
         <b>attack + defense</b> <br />
@@ -222,11 +228,10 @@ const Table = () => {
         <br />
         <b>DD</b> shows defense for defending army.
         <br />
-        <b>attack + defense sum</b> sum of four features: attack and defense for
-        attacking army and attack and defense for defending army.
+        <b>A+D sum</b> Shows sum of above listed four features: attack and
+        defense for attacking army and attack and defense for defending army.
         <br />
-        <b>A+D/size</b> shows this total sum divided per square based on
-        buildings <b>size</b>
+        <b>A+D/size</b> shows this total sum divided by buildings <b>size</b>
       </p>
 
       <p>
@@ -244,10 +249,8 @@ const Table = () => {
       <p>
         <b>era</b> shows what era is the statistic for given building based on
       </p>
-      <p>
-        <b>own</b> shows how much of that one I have in my city, if you were
-        wondering :D
-      </p>
+
+      <div className="divider"></div>
 
       <p>
         currently sorted by <b className="blue-font">{sortBy || "alphabet"}</b>
@@ -310,6 +313,8 @@ const Table = () => {
                   <td key={subcat.key}>
                     {subcat.key == "title"
                       ? key
+                      : subcat.key == "road"
+                      ? items[key][subcat.key]?.toString()
                       : subcat.key == "custom"
                       ? sumFields(subcat.count, key)
                       : subcat.key == "multiplier"

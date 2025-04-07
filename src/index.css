@@ -163,3 +163,10 @@ button:focus-visible {
 .chosen {
   background-color: var(--blue);
 }
+
+.divider {
+  width: 240px;
+  height: 8px;
+  margin: 32px 0;
+  background-color: var(--blue);
+}

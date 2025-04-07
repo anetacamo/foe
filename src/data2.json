@@ -362,7 +362,7 @@
     "goodsGuild": 1200,
     "era": "all"
   },
-  "cape canaveral": {
+  "cape canaveral lvl 80": {
     "size": 20,
     "amount": 1,
     "fps": 80,
@@ -631,14 +631,22 @@
     "GEdD": 70,
     "aD": 72,
     "amount": 1,
-    "bonus": ["zen harmony", "fps", "goodsNext", "goods"],
+    "bonus": [
+      "3x zen harmony",
+      "large fps / 90%",
+      "40x large fps / 10%",
+      "500 goods prev age / 10%",
+      "128 goods prev age / 40%",
+      "128 goods next age / 40%",
+      "500 goods next age / 10%"
+    ],
     "dD": 72,
     "era": "SAM",
     "fps": 62,
     "happiness": 50000,
     "people": 32000,
     "size": 24,
-    "supply": 600000
+    "supply": 1000000
   },
   "monster ranch nightmare box": {
     "aA": 5,
@@ -1194,7 +1202,7 @@
     "size": 18,
     "road": true
   },
-  "shika shrine": {
+  "shika shrine lvl 8": {
     "GBGaD": 50,
     "GBGdD": 50,
     "GEaD": 52,
@@ -1204,8 +1212,15 @@
     "dD": 54,
     "era": "SAM",
     "fps": 51,
-    "goodsNext": 200,
-    "goodsPrev": 200,
+    "bonus": [
+      "3x zen harmony",
+      "large fps / 90%",
+      "40x large fps / 10%",
+      "374 goods prev age / 10%",
+      "94 goods prev age / 40%",
+      "94 goods next age / 40%",
+      "374 goods next age / 10%"
+    ],
     "happiness": 36000,
     "people": 24000,
     "size": 24,
